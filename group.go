@@ -36,3 +36,7 @@ func (g *Group) Wait() *Error {
 	defer g.mutex.Unlock()
 	return g.err
 }
+
+func (g *Group) WaitErr() error {
+	return g.Wait()
+}
